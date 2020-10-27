@@ -51,26 +51,17 @@ namespace WordDocumentDigitalSignatureSample
         static SignatureInfo CreateSignatureInfo()
         {
             SignatureInfo signatureInfo = new SignatureInfo();
-            string role = "Sales Representative";
-            string comments = "Demo Digital Signature";
-            string country = "USA";
-            string state = "WA";
-            string city = "Seattle";
-            string address1 = "507 - 20th Ave. E.";
-            string address2 = "Apt. 2A";
-            string postalCode = "98122";
-
             signatureInfo.CommitmentType = CommitmentType.ProofOfApproval;
             signatureInfo.Time = DateTime.UtcNow;
             signatureInfo.ClaimedRoles.Clear();
-            signatureInfo.ClaimedRoles.Add(role);
-            signatureInfo.Country = country;
-            signatureInfo.City = city;
-            signatureInfo.StateOrProvince = state;
-            signatureInfo.Address1 = address1;
-            signatureInfo.Address2 = address2;
-            signatureInfo.PostalCode = postalCode;
-            signatureInfo.Comments = comments;
+            signatureInfo.ClaimedRoles.Add("Sales Representative");
+            signatureInfo.Country = "USA";
+            signatureInfo.City = "Seattle";
+            signatureInfo.StateOrProvince = "WA";
+            signatureInfo.Address1 = "507 - 20th Ave. E.";
+            signatureInfo.Address2 = "Apt. 2A";
+            signatureInfo.PostalCode = "98122";
+            signatureInfo.Comments = "Demo Digital Signature";
             return signatureInfo;
         }
     
