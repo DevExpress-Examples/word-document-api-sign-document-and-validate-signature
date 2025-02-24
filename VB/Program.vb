@@ -15,7 +15,7 @@ Namespace WordDocumentDigitalSignatureSample
 
         Shared Sub Main(ByVal args As String())
             'Enable all security protocols:
-            ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol Or SecurityProtocolType.Tls12 Or SecurityProtocolType.Ssl3 Or SecurityProtocolType.Tls Or SecurityProtocolType.Tls11
+            ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol Or SecurityProtocolType.Tls12 Or SecurityProtocolType.Tls Or SecurityProtocolType.Tls11
             SignDocument(input)
             ValidateSignature(output)
         End Sub

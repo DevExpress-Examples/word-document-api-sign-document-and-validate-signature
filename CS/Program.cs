@@ -14,8 +14,7 @@ namespace WordDocumentDigitalSignatureSample
         static void Main(string[] args)
         {
             //Enable all security protocols:
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12 
-                | SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11;
+            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11;
  
             SignDocument(input);
             ValidateSignature(output);
