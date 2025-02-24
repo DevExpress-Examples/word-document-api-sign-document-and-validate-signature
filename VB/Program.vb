@@ -1,9 +1,7 @@
 Imports DevExpress.Office.DigitalSignatures
 Imports DevExpress.Office.Tsp
-Imports System
 Imports System.Diagnostics
 Imports System.Net
-Imports System.Security.Cryptography.X509Certificates
 
 Namespace WordDocumentDigitalSignatureSample
 
@@ -16,8 +14,8 @@ Namespace WordDocumentDigitalSignatureSample
         Shared Sub Main(ByVal args As String())
             'Enable all security protocols:
             ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol Or SecurityProtocolType.Tls12 Or SecurityProtocolType.Tls Or SecurityProtocolType.Tls11
-            SignDocument(input)
-            ValidateSignature(output)
+            Program.SignDocument(input)
+            Program.ValidateSignature(output)
         End Sub
 
         Private Shared Sub SignDocument(ByVal path As String)
@@ -50,7 +48,7 @@ Namespace WordDocumentDigitalSignatureSample
         Private Shared Function CreateSignatureInfo() As SignatureInfo
             Dim signatureInfo As SignatureInfo = New SignatureInfo()
             signatureInfo.CommitmentType = CommitmentType.ProofOfApproval
-            signatureInfo.Time = Date.UtcNow
+            signatureInfo.Time = DateTime.UtcNow
             signatureInfo.ClaimedRoles.Clear()
             signatureInfo.ClaimedRoles.Add("Sales Representative")
             signatureInfo.Country = "USA"
@@ -76,7 +74,7 @@ Namespace WordDocumentDigitalSignatureSample
                 Case PackageSignatureValidationResult.Valid
                     Console.WriteLine(validationMessage)
                     Console.ReadKey()
-                    Call Process.Start(path)
+                    Process.Start(path)
                 Case PackageSignatureValidationResult.SignaturesNotFound
                     Console.WriteLine(validationMessage)
                 Case PackageSignatureValidationResult.Invalid, PackageSignatureValidationResult.PartiallyValid
@@ -84,7 +82,7 @@ Namespace WordDocumentDigitalSignatureSample
                     Console.WriteLine(validationMessage)
                     Dim i As Integer = 1
                     For Each checkResult As SignatureCheckResult In failedCheckDetails
-                        Console.WriteLine(String.Format("Validation details {0}: " & Microsoft.VisualBasic.Constants.vbCrLf & "{1} failed, Info: {2} " & Microsoft.VisualBasic.Constants.vbCrLf, i, checkResult.CheckType, checkResult.Info))
+                        Console.WriteLine([String].Format("Validation details {0}: " & Microsoft.VisualBasic.Constants.vbCrLf & "{1} failed, Info: {2} " & Microsoft.VisualBasic.Constants.vbCrLf, i, checkResult.CheckType, checkResult.Info))
                         i += 1
                     Next
 
