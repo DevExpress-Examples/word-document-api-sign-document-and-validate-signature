@@ -19,7 +19,7 @@ This example illustrates how to apply a digital signature to a Word document and
 
 * [Sign Office Documents](https://docs.devexpress.com/OfficeFileAPI/402567/sign-office-documents)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=word-document-api-sign-document-and-validate-signature&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=word-document-api-sign-document-and-validate-signature&~~~was_helpful=no)
 
